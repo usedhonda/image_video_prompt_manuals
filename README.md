@@ -1,97 +1,184 @@
-# Veo 3.1 Prompt Generation Manual
+# AI Video Prompt Generation Manual
 
-Google Veo 3.1 動画生成のためのプロンプトマニュアル。GeminiなどのAIにこのリファレンスを読み込ませることで、最適なプロンプトを生成させることが目的。
+動画生成AI（Veo 3.1 / Grok Imagine）のためのプロンプトマニュアル。GeminiなどのAIにリファレンスを読み込ませることで、最適なプロンプトを生成させることが目的。
 
 ## Purpose
 
-**Target Reader**: Gemini AI
-**Output**: Veo 3.1 compatible JSON prompts
+**Target Reader**: Gemini AI (or other LLMs)
+**Output**: Veo 3.1 / Grok Imagine compatible prompts
 **Language**: English (prompts) / Japanese (documentation)
+
+---
 
 ## resources/ Structure
 
 ```
 resources/
-├── human-manual/     # 人間向けマニュアル（日本語）
-└── reference/        # AI向けリファレンス（英語）
+├── common/               # 共通リソース（Phase 1静止画生成）
+│   └── phase1-nano-banana/
+├── veo/                  # Veo 3.1 用（高品質・プロ向け）
+│   ├── human-manual/
+│   └── reference/
+└── grok/                 # Grok Imagine 用（高速・コスト重視）
+    ├── human-manual/
+    └── reference/
 ```
+
+---
+
+## Veo vs Grok: Which to Use?
+
+| 項目 | Veo 3.1 | Grok Imagine |
+|------|---------|--------------|
+| **価格** | $0.40-0.75/秒 | $30/月（500本/日） |
+| **品質** | プロフェッショナル | 実験・プロトタイプ向け |
+| **動画長** | 4-8秒 | 5-15秒 |
+| **生成速度** | 数分 | 30秒以下 |
+| **ネガティブプロンプト** | 対応 | 非対応 |
+| **参照画像** | 最大3枚（Ingredients） | 限定的 |
+| **オーディオ** | 対応 | ネイティブ統合 |
+| **最適用途** | 最終制作物 | 高速イテレーション |
+
+**推奨:**
+- **プロダクション品質** → Veo 3.1
+- **実験・プロトタイプ・大量生成** → Grok Imagine
+- **Phase 1 (静止画)** → 両者共通で Gemini 3 Pro (Nano Banana Pro)
+
+---
+
+## Veo 3.1 (`resources/veo/`)
 
 ### human-manual/
 
-**目的**: 人間がワークフローを理解するためのガイド
+人間がワークフローを理解するためのガイド（日本語）
 
 | File | Description |
 |------|-------------|
 | `00-quick-start.md` | 5分で始めるクイックスタート |
 | `01-workflow-selector.md` | ユースケース別ワークフロー選択 |
-| `veo3.1-prompt-manual.md` | 総合マニュアル |
 | `troubleshooting.md` | よくある問題と解決策 |
-| `phase1-image/` | 静止画生成（Nano Banana Pro）手順 |
-| `phase2-video/` | 動画生成（Veo 3.1）手順 |
-| `phase3-extend/` | 動画延長・編集手順 |
+| `phase1-image/` | 静止画生成手順 |
+| `phase2-video/` | 動画生成手順 |
 | `use-cases/` | ユースケース別詳細ガイド |
 
 ### reference/
 
-**目的**: GeminiがVeo 3.1プロンプトを生成する際に参照するリファレンス
+GeminiがVeo 3.1プロンプトを生成する際のリファレンス（英語）
 
 | File | Description |
 |------|-------------|
-| `INDEX.md` | **エントリーポイント** - Geminiが最初に読むファイル |
-| `00-system-prompt.md` | Geminiへのロール定義・出力フォーマット |
-| `phase1-nano-banana/` | 静止画生成のJSONスキーマ・キーワード・テンプレート |
-| `phase2-veo/` | 動画生成のJSONスキーマ・APIパラメータ・キーワード辞書 |
-| `phase3-extend/` | 動画延長のスキーマ・トランジション定義 |
+| `INDEX.md` | **エントリーポイント** |
+| `00-system-prompt.md` | Geminiへのロール定義 |
+| `phase2-veo/` | 動画生成スキーマ・キーワード |
 | `use-case-templates/` | ユースケース別JSONテンプレート |
+
+---
+
+## Grok Imagine (`resources/grok/`)
+
+### reference/
+
+GeminiがGrok Imagineプロンプトを生成する際のリファレンス（英語）
+
+| File | Description |
+|------|-------------|
+| `INDEX.md` | **エントリーポイント** |
+| `00-system-prompt.md` | Geminiへのロール定義 |
+| `phase2-grok/json-schema.md` | **6要素フォーマット・JSONサンプル** |
+| `phase2-grok/api-parameters.md` | APIパラメータ仕様 |
+| `phase2-grok/keywords/` | カメラ・ライティング・スタイル・オーディオ |
+
+---
+
+## Common Resources (`resources/common/`)
+
+### phase1-nano-banana/
+
+静止画生成（Gemini 3 Pro）のリファレンス。VeoとGrok両方で共通使用。
+
+---
 
 ## Usage
 
 ### For Humans
 
-1. `resources/human-manual/00-quick-start.md` を読む
-2. 作りたい動画に応じて `use-cases/` から該当ガイドを参照
+1. 作りたい動画のプラットフォーム（Veo/Grok）を選択
+2. 該当する `human-manual/00-quick-start.md` を読む
 3. Geminiに依頼する際の参考にする
 
-### For Gemini
-
-Geminiに以下のように指示する：
+### For Gemini (Veo)
 
 ```
-resources/reference/INDEX.md を読んで、
+resources/veo/reference/INDEX.md を読んで、
 [ユースケース] のVeo 3.1プロンプトを生成して
 ```
 
-`INDEX.md`が必要なファイルのみを選択的にロードする。
-
-## Workflow Overview
+### For Gemini (Grok)
 
 ```
-[Phase 1: Image]        [Phase 2: Video]        [Phase 3: Extend]
-Nano Banana Pro    →    Veo 3.1            →    Video Extension
-(optional)              Text-to-Video           8s → longer
-                        Image-to-Video
-                        Ingredients mode
+resources/grok/reference/INDEX.md を読んで、
+[ユースケース] のGrok Imagineプロンプトを生成して
 ```
+
+---
 
 ## Integration for App Development
 
-アプリ開発でVeo 3.1プロンプト生成機能を組み込む場合、`resources/reference/` フォルダをプロジェクトに取り込んで使用すると効果的。
+アプリ開発でプロンプト生成機能を組み込む場合、`reference/` フォルダをプロジェクトに取り込む。
 
 ```
 your-app/
 ├── src/
 └── prompts/
-    └── veo-reference/    ← resources/reference/ をコピー
-        ├── INDEX.md
-        ├── 00-system-prompt.md
-        └── ...
+    ├── veo-reference/     ← resources/veo/reference/ をコピー
+    └── grok-reference/    ← resources/grok/reference/ をコピー
 ```
 
-LLM APIに `INDEX.md` をエントリーポイントとして渡す。`INDEX.md` がユースケースに応じて必要なファイルを指示するので、それに従ってコンテキストを構築する。
+LLM APIに `INDEX.md` をエントリーポイントとして渡す。`INDEX.md` がユースケースに応じて必要なファイルを指示する。
+
+---
+
+## Workflow Overview
+
+### Veo 3.1 Workflow
+```
+[Phase 1: Image]        [Phase 2: Video]        [Phase 3: Extend]
+Nano Banana Pro    →    Veo 3.1            →    Video Extension
+(Gemini 3 Pro)          Text-to-Video           8s → longer
+                        Image-to-Video
+                        Ingredients mode
+```
+
+### Grok Imagine Workflow
+```
+[Phase 1: Image]        [Phase 2: Video]
+Nano Banana Pro    →    Grok Imagine
+(Gemini 3 Pro)          Text-to-Video
+                        Image-to-Video
+                        Native Audio
+```
+
+---
 
 ## Key Concepts
 
 - **Nano Banana Pro**: Gemini 3 Pro による静止画生成
-- **Veo 3.1**: Google の動画生成AI（4/6/8秒）
-- **Ingredients**: 参照画像を使ったキャラクター一貫性機能
+- **Veo 3.1**: Google の動画生成AI（高品質、4/6/8秒）
+- **Grok Imagine**: xAI の動画生成AI（高速、5-15秒、Aurora Engine）
+- **6-Component Formula**: Grok用プロンプト構造（Subject + Action + Camera + Lighting + Environment + Audio）
+- **Ingredients**: Veo用参照画像によるキャラクター一貫性機能
 - **JSON Prompt**: 構造化されたプロンプトフォーマット
+
+---
+
+## docs/ Structure
+
+```
+docs/
+├── sources/              # 調査資料（収集した生データ）
+│   ├── official/         # 公式ドキュメント
+│   ├── community/        # コミュニティ情報
+│   └── grok/             # Grok Imagine調査資料
+├── ask/                  # AI会話ログ（自動保存）
+└── log/                  # 作業ログ
+```

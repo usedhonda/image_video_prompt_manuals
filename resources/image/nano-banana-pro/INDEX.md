@@ -1,50 +1,135 @@
 # Nano Banana Pro (Gemini 3 Pro Image) Reference Index
 
-## Entry Point for AI Prompt Generation
+## Router Instructions for AI
 
-This index guides you through the reference materials for generating optimized Nano Banana Pro prompts.
-
----
-
-## Quick Start
-
-1. **Read the System Prompt** → Understand your role and model capabilities
-2. **Select a JSON Schema** → Choose full or minimal based on complexity
-3. **Reference Keywords** → Build accurate parameter values
-4. **Use Templates** → Start from proven examples
+**IMPORTANT**: Do not load all files at once. Use this index to select only the files needed for the current task. This prevents token overload and improves response quality.
 
 ---
 
-## File Reference
+## File Loading Decision Tree
 
-### Core Documents
+```
+Step 1: ALWAYS load these first
+├── 00-system-prompt.md
+└── logic/json-schema.md
 
-| File | Purpose | Load When |
-|------|---------|-----------|
-| `00-system-prompt.md` | Role definition, model philosophy, principles | Always first |
-| `json-schema.md` | Master schema, minimal schema, advanced hacks | Every prompt |
-| `keywords.md` | Photography, lighting, composition, style terms | Filling schema values |
+Step 2: What type of request?
+│
+├─ Multiple reference images (2+)?
+│   └─ Load: logic/multi-image-slots.md
+│
+├─ Real product/brand/historical accuracy needed?
+│   └─ Load: logic/grounding-rules.md
+│
+├─ Text/typography in image?
+│   └─ Load: vocabulary/typography.md
+│
+├─ Video generation (Veo 3.1)?
+│   └─ Load: strategies/video-workflow.md
+│
+├─ Need specific camera/lens/lighting terms?
+│   └─ Load: vocabulary/photography.md OR vocabulary/cinematography.md
+│
+├─ Artistic style request?
+│   └─ Load: styles/artistic-styles.md
+│
+├─ Data visualization/infographic?
+│   └─ Load: styles/corporate-data-viz.md
+│
+├─ UI/UX/app mockup?
+│   └─ Load: styles/ui-ux-design.md
+│
+├─ Encountering generation issues?
+│   └─ Load: strategies/troubleshooting.md
+│
+└─ Need creative techniques?
+    └─ Load: strategies/prompt-techniques.md
+```
 
-### Style Techniques
+---
 
-| File | Content |
-|------|---------|
-| `styles/artistic-styles.md` | 引き算の美学、画材指定、11種のスタイルレシピ |
-| `styles/prompt-techniques.md` | 7つのコツ、Pro専用機能、動画連携テクニック |
+## Directory Structure
 
-### Templates (Copy & Customize)
+```
+nano-banana-pro/
+├── INDEX.md                 ← You are here (Router)
+├── 00-system-prompt.md      ← Always load first
+│
+├── logic/                   # Rules & Structure
+│   ├── json-schema.md       # Master JSON schema (always load)
+│   ├── multi-image-slots.md # 14-slot mixing guide
+│   └── grounding-rules.md   # Search trigger conditions
+│
+├── vocabulary/              # Keywords & Terms
+│   ├── photography.md       # Camera, lens, composition
+│   ├── cinematography.md    # Lighting, atmosphere, motion
+│   └── typography.md        # Text rendering, fonts
+│
+├── strategies/              # Techniques & Workflows
+│   ├── prompt-techniques.md # 7 tips, Pro features
+│   ├── video-workflow.md    # Veo 3.1 integration
+│   └── troubleshooting.md   # Problem solving, negatives
+│
+├── styles/                  # Artistic Styles
+│   ├── artistic-styles.md   # 11 style recipes
+│   ├── corporate-data-viz.md # Infographics, charts
+│   └── ui-ux-design.md      # App/web UI styles
+│
+└── templates/               # Ready-to-use JSON
+    └── *.json               # Use-case templates
+```
 
-| Template | Use Case | Key Features |
-|----------|----------|--------------|
-| `templates/character-sheet.json` | Character consistency reference | Multi-view, identity anchors |
-| `templates/cyberpunk-character.json` | Detailed character portrait | Full schema example, Veo-ready |
-| `templates/product-shot.json` | E-commerce product photography | Lighting emphasis, commercial |
-| `templates/scene-background.json` | Environment/scene generation | Spatial structure, atmosphere |
-| `templates/manga-panel.json` | Manga/comic style artwork | Panel layout, speech bubbles |
-| `templates/ui-mockup.json` | App/web interface design | Layout constraints, typography |
-| `templates/architecture-floorplan.json` | Architectural visualization | Spatial logic, room connections |
-| `templates/fashion-lookbook.json` | Fashion/lifestyle photography | Product + model variations |
-| `templates/social-media-influencer.json` | SNS content generation | Authentic imperfections, candid |
+---
+
+## Quick Reference: File Purpose
+
+### Logic (Load based on task complexity)
+
+| File | Load When |
+|------|-----------|
+| `logic/json-schema.md` | **ALWAYS** - Defines prompt structure |
+| `logic/multi-image-slots.md` | Using 2+ reference images |
+| `logic/grounding-rules.md` | Need real-world accuracy |
+
+### Vocabulary (Load based on content type)
+
+| File | Load When |
+|------|-----------|
+| `vocabulary/photography.md` | Camera settings, poses, composition |
+| `vocabulary/cinematography.md` | Lighting setups, atmosphere |
+| `vocabulary/typography.md` | Text in image, fonts, labels |
+
+### Strategies (Load based on workflow)
+
+| File | Load When |
+|------|-----------|
+| `strategies/prompt-techniques.md` | Need creative tips |
+| `strategies/video-workflow.md` | Creating images for Veo |
+| `strategies/troubleshooting.md` | Fixing generation issues |
+
+### Styles (Load based on aesthetic)
+
+| File | Load When |
+|------|-----------|
+| `styles/artistic-styles.md` | Artistic/creative styles |
+| `styles/corporate-data-viz.md` | Charts, infographics, dashboards |
+| `styles/ui-ux-design.md` | App UI, web design mockups |
+
+---
+
+## Templates (Copy & Customize)
+
+| Template | Use Case |
+|----------|----------|
+| `templates/character-sheet.json` | Character consistency reference |
+| `templates/cyberpunk-character.json` | Detailed character portrait |
+| `templates/product-shot.json` | E-commerce product photography |
+| `templates/scene-background.json` | Environment/scene generation |
+| `templates/manga-panel.json` | Manga/comic style artwork |
+| `templates/ui-mockup.json` | App/web interface design |
+| `templates/architecture-floorplan.json` | Architectural visualization |
+| `templates/fashion-lookbook.json` | Fashion/lifestyle photography |
+| `templates/social-media-influencer.json` | SNS content generation |
 
 ---
 
@@ -54,18 +139,18 @@ This index guides you through the reference materials for generating optimized N
 - **Reasoning-powered** - Thinks before rendering
 - **JSON parsing** - Direct parameter injection
 - **Text rendering** - Better than competitors (keep <6 words)
-- **Counting/positioning** - Logic gates enable precision
+- **14-image mixing** - Combine multiple references
 - **Camera physics** - Accurate lens/aperture simulation
 - **Search grounding** - Real-world accuracy via Google Search
 
 ### Limitations
-- Not optimized for `((keyword))` weight syntax (Midjourney style)
+- Not optimized for `((keyword))` weight syntax
 - Complex text may still have errors
 - Character consistency requires explicit identity anchors
 
 ---
 
-## Schema Selection Decision Tree
+## Schema Selection (Step 2 of generation)
 
 ```
 User Request
@@ -74,51 +159,25 @@ User Request
     │   └─ Use: Minimal Schema
     │
     ├─ Character portrait
-    │   └─ Use: Full Schema (subject + attire + lighting)
+    │   └─ Use: Full Schema + character-sheet.json
     │
     ├─ Product photography
-    │   └─ Use: Full Schema (photography + lighting emphasis)
+    │   └─ Use: Full Schema + product-shot.json
     │
     ├─ UI/UX mockup
-    │   └─ Use: templates/ui-mockup.json
+    │   └─ Use: templates/ui-mockup.json + styles/ui-ux-design.md
+    │
+    ├─ Data visualization
+    │   └─ Use: styles/corporate-data-viz.md
     │
     ├─ Scene/environment
-    │   └─ Use: Full Schema (environment + spatial_structure)
+    │   └─ Use: Full Schema + scene-background.json
     │
     ├─ Counting/exact positioning
-    │   └─ Use: Logic Gate Hack
+    │   └─ Use: Logic Gate Hack (in json-schema.md)
     │
-    ├─ Before/after comparison
-    │   └─ Use: Split View Hack
-    │
-    └─ Real-world product accuracy
-        └─ Use: Grounding Injection Hack
-```
-
----
-
-## Integration with Veo 3.1
-
-Nano Banana Pro images serve as inputs for Veo 3.1 video generation:
-
-| Veo Use | Nano Banana Optimization |
-|---------|--------------------------|
-| First Frame | Clear subject, motion-ready pose, negative space for direction |
-| Ingredient (Character) | Neutral background, multiple angles, identity anchors |
-| Last Frame | Arrival pose, settled composition |
-
-Always include `veo_optimization` section when generating images for video use.
-
----
-
-## Loading Order for Comprehensive Prompts
-
-```
-1. 00-system-prompt.md      [ALWAYS]
-2. json-schema.md           [ALWAYS]
-3. keywords.md              [AS NEEDED for specific terms]
-4. styles/*.md              [AS NEEDED for artistic styles]
-5. templates/*.json         [AS NEEDED for starting point]
+    └─ Video frame (Veo 3.1)
+        └─ Use: strategies/video-workflow.md + veo_optimization
 ```
 
 ---
@@ -127,6 +186,7 @@ Always include `veo_optimization` section when generating images for video use.
 
 | Version | Date | Changes |
 |---------|------|---------|
+| v4.0 | 2025-12 | Reorganized structure (logic/vocabulary/strategies/styles) |
 | v3.0 | 2025-12 | Master schema, advanced hacks, use-case templates |
 | v2.0 | 2025-11 | Initial Gemini 3 Pro support |
 | v1.0 | 2025-10 | Gemini 2.5 Flash (original Nano Banana) |

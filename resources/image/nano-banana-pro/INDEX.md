@@ -25,6 +25,13 @@ This index guides you through the reference materials for generating optimized N
 | `json-schema.md` | Master schema, minimal schema, advanced hacks | Every prompt |
 | `keywords.md` | Photography, lighting, composition, style terms | Filling schema values |
 
+### Style Techniques
+
+| File | Content |
+|------|---------|
+| `styles/artistic-styles.md` | 引き算の美学、画材指定、11種のスタイルレシピ |
+| `styles/prompt-techniques.md` | 7つのコツ、Pro専用機能、動画連携テクニック |
+
 ### Templates (Copy & Customize)
 
 | Template | Use Case | Key Features |
@@ -110,7 +117,8 @@ Always include `veo_optimization` section when generating images for video use.
 1. 00-system-prompt.md      [ALWAYS]
 2. json-schema.md           [ALWAYS]
 3. keywords.md              [AS NEEDED for specific terms]
-4. templates/*.json         [AS NEEDED for starting point]
+4. styles/*.md              [AS NEEDED for artistic styles]
+5. templates/*.json         [AS NEEDED for starting point]
 ```
 
 ---

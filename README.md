@@ -1,11 +1,11 @@
-# AI Video Prompt Generation Manual
+# AI Image & Video Prompt Generation Manual
 
-動画生成AI（Veo 3.1 / Grok Imagine）のためのプロンプトマニュアル。GeminiなどのAIにリファレンスを読み込ませることで、最適なプロンプトを生成させることが目的。
+画像・動画生成AI（Nano Banana Pro / Veo 3.1 / Grok Imagine）のためのプロンプトマニュアル。GeminiなどのAIにリファレンスを読み込ませることで、最適なプロンプトを生成させることが目的。
 
 ## Purpose
 
 **Target Reader**: Gemini AI (or other LLMs)
-**Output**: Veo 3.1 / Grok Imagine compatible prompts
+**Output**: Nano Banana Pro (静止画) / Veo 3.1 / Grok Imagine (動画) compatible prompts
 **Language**: English (prompts) / Japanese (documentation)
 
 ---
@@ -46,21 +46,39 @@ resources/
 
 ---
 
-## Image Generation (`resources/image/`)
+## Image Generation: Nano Banana Pro (`resources/image/nano-banana-pro/`)
 
-### nano-banana-pro/
+Gemini 3 Proによる静止画生成。VeoとGrok両方の入力画像として共通使用。
 
-静止画生成（Gemini 3 Pro）のリファレンス。VeoとGrok両方で共通使用。
+### 特徴
+
+- **推論エンジン搭載** - 生成前に物理法則を計画（logic_chain）
+- **JSON構造化プロンプト** - 直接パラメータ注入
+- **14枚画像ミキシング** - 複数参照画像の合成
+- **テキストレンダリング** - 6語以内で高精度（text_module）
+- **Search Grounding** - Google検索による実世界精度
+
+### ディレクトリ構造
+
+| Folder | Description |
+|--------|-------------|
+| `logic/` | JSONスキーマ、multi-image-slots、grounding-rules |
+| `vocabulary/` | photography, cinematography, typography, fluid-dynamics, text-integration |
+| `strategies/` | prompt-techniques, video-workflow, troubleshooting, quality-techniques |
+| `styles/` | artistic-styles, corporate-data-viz, ui-ux-design |
+| `templates/` | ユースケース別JSONテンプレート |
+
+### 主要ファイル
 
 | File | Description |
 |------|-------------|
-| `INDEX.md` | **エントリーポイント** |
+| `INDEX.md` | **エントリーポイント**（ルーター機能付き） |
 | `00-system-prompt.md` | Geminiへのロール定義・モデル哲学 |
-| `json-schema.md` | マスターJSONスキーマ・高度なハック |
-| `keywords.md` | カメラ物理・ライティング・スタイル辞書 |
-| `templates/` | ユースケース別JSONテンプレート |
+| `logic/json-schema.md` | マスターJSONスキーマ + logic_chain + text_module |
+| `strategies/quality-techniques.md` | 品質向上テクニック（Ingredients Method等） |
 
-**テンプレート一覧:**
+### テンプレート一覧
+
 - `character-sheet.json` - キャラクター一貫性用
 - `cyberpunk-character.json` - 詳細キャラクター例（Veo連携対応）
 - `product-shot.json` - 商品撮影
@@ -99,6 +117,8 @@ GeminiがVeo 3.1プロンプトを生成する際のリファレンス（英語�
 | `00-system-prompt.md` | Geminiへのロール定義 |
 | `json-schema.md` | 動画生成スキーマ |
 | `keywords/` | カメラ・ライティング・スタイル |
+| `keywords/camera-movement.md` | シネマティックカメラワーク |
+| `keywords/audio-cues.md` | サウンドデザインキーワード |
 | `use-case-templates/` | ユースケース別JSONテンプレート |
 
 ---
@@ -118,7 +138,9 @@ GeminiがGrok Imagineプロンプトを生成する際のリファレンス（�
 | `workflows.md` | ワークフローテクニック（Last Frame等） |
 | `troubleshooting.md` | トラブルシューティング |
 | `spicy-mode.md` | Spicy Mode詳細 |
+| `strategies/filter-bypass.md` | フィルタ回避テクニック |
 | `keywords/` | カメラ・ライティング・スタイル・オーディオ |
+| `keywords/digital-aesthetics.md` | インターネット美学（glitch, vaporwave等） |
 
 ---
 
@@ -194,14 +216,24 @@ Nano Banana Pro    →    Grok Imagine
 
 ## Key Concepts
 
+### Nano Banana Pro（静止画）
 - **Nano Banana Pro**: Gemini 3 Pro による静止画生成（推論エンジン搭載、JSON構造化プロンプト対応）
+- **logic_chain**: 物理法則・空間配置の事前計画スキーマ
+- **text_module**: テキストレンダリング専用モジュール
+- **Quality Techniques**: Ingredients Method, Search-to-Render, Physics-Aware等
+
+### Veo 3.1（動画）
 - **Veo 3.1**: Google の動画生成AI（高品質、4/6/8秒）
+- **Ingredients**: Veo用参照画像によるキャラクター一貫性機能
+
+### Grok Imagine（動画）
 - **Grok Imagine**: xAI の動画生成AI（高速、5-15秒、Aurora Engine）
 - **6-Component Formula**: Grok用プロンプト構造（Subject + Action + Camera + Lighting + Environment + Audio）
-- **Ingredients**: Veo用参照画像によるキャラクター一貫性機能
-- **JSON Prompt**: 構造化されたプロンプトフォーマット
 - **Last Frame Method**: Grokで長尺動画を作成するテクニック
 - **Spicy Mode**: Grokの緩和されたコンテンツモデレーション
+
+### 共通
+- **JSON Prompt**: 構造化されたプロンプトフォーマット
 
 ---
 

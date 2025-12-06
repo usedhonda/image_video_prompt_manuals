@@ -132,7 +132,8 @@ video/grok/reference/
 │   ├── camera-movements.md
 │   ├── lighting-color.md
 │   ├── styles-aesthetics.md
-│   └── audio-instructions.md
+│   ├── audio-instructions.md
+│   └── digital-aesthetics.md   ← Internet-native styles
 │
 ├── templates/
 │   ├── text-to-video/

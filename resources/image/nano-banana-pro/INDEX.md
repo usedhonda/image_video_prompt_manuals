@@ -22,7 +22,10 @@ Step 2: What type of request?
 │   └─ Load: logic/grounding-rules.md
 │
 ├─ Text/typography in image?
-│   └─ Load: vocabulary/typography.md
+│   └─ Load: vocabulary/typography.md + vocabulary/text-integration.md
+│
+├─ Liquid/material physics (food, product)?
+│   └─ Load: vocabulary/fluid-dynamics.md
 │
 ├─ Video generation (Veo 3.1)?
 │   └─ Load: strategies/video-workflow.md
@@ -63,7 +66,9 @@ nano-banana-pro/
 ├── vocabulary/              # Keywords & Terms
 │   ├── photography.md       # Camera, lens, composition
 │   ├── cinematography.md    # Lighting, atmosphere, motion
-│   └── typography.md        # Text rendering, fonts
+│   ├── typography.md        # Text rendering, fonts
+│   ├── fluid-dynamics.md    # Liquid, material physics
+│   └── text-integration.md  # Text embedding techniques
 │
 ├── strategies/              # Techniques & Workflows
 │   ├── prompt-techniques.md # 7 tips, Pro features
@@ -98,6 +103,8 @@ nano-banana-pro/
 | `vocabulary/photography.md` | Camera settings, poses, composition |
 | `vocabulary/cinematography.md` | Lighting setups, atmosphere |
 | `vocabulary/typography.md` | Text in image, fonts, labels |
+| `vocabulary/fluid-dynamics.md` | Liquid, material, physics effects |
+| `vocabulary/text-integration.md` | Embedding text naturally in scene |
 
 ### Strategies (Load based on workflow)
 

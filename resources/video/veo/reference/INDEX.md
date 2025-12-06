@@ -160,10 +160,12 @@ video/veo/reference/
 │
 ├── keywords/
 │   ├── camera-movements.md
+│   ├── camera-movement.md      ← Cinematographic techniques
 │   ├── lighting-color.md
 │   ├── styles-aesthetics.md
 │   ├── negative-prompts.md
-│   └── audio-instructions.md
+│   ├── audio-instructions.md
+│   └── audio-cues.md           ← Sound design keywords
 │
 ├── templates/
 │   ├── text-to-video/

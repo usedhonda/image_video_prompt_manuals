@@ -45,8 +45,11 @@ Step 2: What type of request?
 ├─ Encountering generation issues?
 │   └─ Load: strategies/troubleshooting.md
 │
-└─ Need creative techniques?
-    └─ Load: strategies/prompt-techniques.md
+├─ Need creative techniques?
+│   └─ Load: strategies/prompt-techniques.md
+│
+└─ Need higher quality (physics, grounding)?
+    └─ Load: strategies/quality-techniques.md
 ```
 
 ---
@@ -73,7 +76,8 @@ nano-banana-pro/
 ├── strategies/              # Techniques & Workflows
 │   ├── prompt-techniques.md # 7 tips, Pro features
 │   ├── video-workflow.md    # Veo 3.1 integration
-│   └── troubleshooting.md   # Problem solving, negatives
+│   ├── troubleshooting.md   # Problem solving, negatives
+│   └── quality-techniques.md # Advanced quality boosting
 │
 ├── styles/                  # Artistic Styles
 │   ├── artistic-styles.md   # 11 style recipes
@@ -113,6 +117,7 @@ nano-banana-pro/
 | `strategies/prompt-techniques.md` | Need creative tips |
 | `strategies/video-workflow.md` | Creating images for Veo |
 | `strategies/troubleshooting.md` | Fixing generation issues |
+| `strategies/quality-techniques.md` | Physics, grounding, text quality |
 
 ### Styles (Load based on aesthetic)
 

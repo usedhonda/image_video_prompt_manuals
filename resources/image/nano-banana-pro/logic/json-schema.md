@@ -96,18 +96,24 @@ The complete schema for full control over Nano Banana Pro outputs:
     "mood": "string - emotional atmosphere",
     "render_engine": "string - optional 3D engine reference (Octane, Unreal, etc.)"
   },
+  "logic_chain": {
+    "physics_engine": "string - how light interacts with main material",
+    "spatial_blocking": "string - z-depth layout of objects",
+    "grounding_query": "string - optional search for real-world accuracy"
+  },
+  "text_module": {
+    "content": "string - exact text to render (keep under 6 words)",
+    "font_family": "string - font name",
+    "integration_method": "string - how text appears (carved, neon, embossed, etc.)",
+    "legibility_priority": "high | medium | low"
+  },
   "constraints": {
     "negative": [
       "elements to avoid"
     ],
     "must_include": [
       "required elements"
-    ],
-    "text_content": {
-      "text": "string - exact text to render",
-      "font": "string - font style",
-      "position": "string - placement"
-    }
+    ]
   },
   "veo_optimization": {
     "intended_use": "first_frame | ingredient | last_frame | standalone",
@@ -232,11 +238,13 @@ Trigger real-world knowledge retrieval:
 | Use Case | Recommended Schema |
 |----------|-------------------|
 | Character portrait | Full schema with identity + attire |
-| Product photography | Full schema with photography + lighting |
+| Product photography | Full schema with photography + lighting + logic_chain |
+| Food/liquid shots | Full schema + logic_chain (physics_engine) |
 | Scene/environment | Full schema with environment + spatial_structure |
+| Text in image | Full schema + text_module |
 | UI mockup | Minimal schema + layout constraints |
 | Quick concept | Minimal schema |
 | Multi-shot consistency | Full schema with veo_optimization |
 | Before/after comparison | Split View hack |
 | Exact counting/positioning | Logic Gate hack |
-| Real-world accuracy | Grounding Injection hack |
+| Real-world accuracy | Grounding Injection hack + logic_chain (grounding_query) |

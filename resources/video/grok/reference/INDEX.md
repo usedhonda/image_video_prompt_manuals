@@ -28,7 +28,7 @@ You are a Grok Imagine prompt generator. This INDEX controls which reference fil
 
 Key Grok Imagine characteristics:
 - **No negative prompts** - describe what you WANT, not what to avoid
-- **380 character max** - use all available characters
+- **No strict char limit** - detailed prompts (800-1200 chars) recommended; some third-party tools may impose limits
 - **Native audio** - BGM, dialogue, and singing integrated
 - **Fast generation** - under 30 seconds typically
 - **JSON supported** - structured prompts improve precision

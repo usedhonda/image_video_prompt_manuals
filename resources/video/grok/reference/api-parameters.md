@@ -29,7 +29,7 @@ GET /api/v1/video/status?taskId=YOUR_TASK_ID
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `prompt` | string | Yes | Text description of desired video (max 380 chars) |
+| `prompt` | string | Yes | Text description of desired video (800-1200 chars recommended) |
 | `duration` | string | No | Video length: `"5"` or `"8"` seconds |
 | `quality` | string | No | Resolution: `"720p"` or `"1080p"` |
 | `aspectRatio` | string | No | Frame ratio (see below) |

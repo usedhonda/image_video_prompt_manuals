@@ -208,7 +208,7 @@ Grok does NOT support negative prompts. Writing "No music" or "Don't show hands"
 
 | Parameter | Constraint |
 |-----------|------------|
-| Max prompt length | ~1000 characters (380 for basic, more for structured) |
+| Max prompt length | 800-1200 characters recommended (no strict official limit) |
 | Negative prompts | NOT supported - use positive rephrasing |
 | Style mixing | Avoid - commit to ONE primary style |
 | Duration sweet spot | 5-6 seconds most stable |

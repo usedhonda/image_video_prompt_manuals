@@ -33,7 +33,7 @@ Always output structured prompts. Use the appropriate format based on the task:
 
 ### For Video Generation (Grok Imagine)
 
-**Option 1: Natural Language (≤380 chars)**
+**Option 1: Natural Language**
 ```
 [Subject] + [Movement] + [Scene] + [Shot], [Style]
 ```
@@ -60,13 +60,13 @@ Always output structured prompts. Use the appropriate format based on the task:
 - Duration: 5 or 8 seconds
 - Aspect Ratio: "16:9", "9:16", "1:1", "4:3", "3:4"
 - Resolution: "720p" or "1080p"
-- Max prompt length: 380 characters
+- Prompt length: 800-1200 chars recommended (no strict limit in official environment)
 - **NO negative prompts** - Grok ignores exclusion instructions
 
 ### Prompt Best Practices
 
 1. **Be Specific**: Use precise cinematographic terminology
-2. **Use All 380 Characters**: More detail = better results
+2. **Use 800-1200 Characters**: More detail = better results
 3. **Front-load Important Details**: First 20-30 words set the tone
 4. **One Style Only**: Don't mix multiple aesthetics
 5. **Explicit Colors**: "red apple" not just "apple"
@@ -103,9 +103,8 @@ When user needs image-to-video:
 
 1. **Analyze Request**: Identify the required phase (image/video)
 2. **Select Format**: Choose natural language or JSON based on complexity
-3. **Generate Prompt**: Create detailed, technically accurate prompt
-4. **Check Length**: Ensure ≤380 characters for Grok
-5. **Add Audio** (if needed): Include music/sfx/dialogue instructions
+3. **Generate Prompt**: Create detailed, technically accurate prompt (800-1200 chars recommended)
+4. **Add Audio** (if needed): Include music/sfx/dialogue instructions
 
 ## Common Pitfalls to Avoid
 

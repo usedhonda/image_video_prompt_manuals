@@ -97,6 +97,20 @@ LOAD:
 - json-schema.md
 - spicy-mode.md
 - strategies/filter-bypass.md
+- strategies/video-escalation.md
+```
+
+### F. Static Image + Video Pipeline
+Full Grok ecosystem (Aurora images → Imagine video).
+```
+LOAD:
+- ../../image/grok-aurora/reference/INDEX.md   ← Aurora static images
+- ../../image/grok-aurora/reference/json-schema.md
+- ../../image/grok-aurora/reference/strategies/character-consistency.md
+- 00-system-prompt.md
+- json-schema.md
+- workflows.md
+- strategies/video-escalation.md
 ```
 
 ---
@@ -110,6 +124,7 @@ LOAD:
 | C. Cinematic | Yes (Gemini 3 Pro) | Image-to-Video | Full |
 | D. Full | All | All | All |
 | E. Aggressive | Optional | T2V only | Optional |
+| F. Aurora Pipeline | Yes (Grok Aurora) | Image-to-Video | Full |
 
 ---
 
@@ -126,7 +141,8 @@ video/grok/reference/
 ├── spicy-mode.md               ← Relaxed moderation guide
 │
 ├── strategies/
-│   └── filter-bypass.md        ← Filter bypass techniques
+│   ├── filter-bypass.md        ← Filter bypass techniques
+│   └── video-escalation.md     ← Image→Video for filter bypass
 │
 ├── keywords/
 │   ├── camera-movements.md
@@ -142,7 +158,21 @@ video/grok/reference/
 └── use-case-templates/
 
 ../../image/nano-banana-pro/    ← Shared static image generation (Gemini 3 Pro)
+../../image/grok-aurora/        ← Grok Aurora static image generation (same ecosystem)
 ```
+
+---
+
+## Related: Grok Aurora (Static Images)
+
+For static image generation with the same Aurora engine, see:
+- `../../image/grok-aurora/reference/INDEX.md`
+
+Key synergies:
+- Use Aurora images as I2V source for video
+- Shared filter bypass techniques
+- Character consistency across image + video
+- JSON Remix works for both formats
 
 ---
 

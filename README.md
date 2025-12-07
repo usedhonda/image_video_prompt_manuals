@@ -15,7 +15,8 @@
 ```
 resources/
 ├── image/                    # 静止画生成
-│   └── nano-banana-pro/      # Gemini 3 Pro
+│   ├── nano-banana-pro/      # Gemini 3 Pro
+│   └── grok-aurora/          # Grok Aurora（xAI）← NEW
 └── video/                    # 動画生成
     ├── veo/                  # Veo 3.1（高品質・プロ向け）
     │   ├── human-manual/
@@ -42,7 +43,8 @@ resources/
 **推奨:**
 - **プロダクション品質** → Veo 3.1
 - **実験・プロトタイプ・大量生成** → Grok Imagine
-- **静止画生成** → 両者共通で Gemini 3 Pro (Nano Banana Pro)
+- **静止画生成（Gemini）** → Nano Banana Pro (Gemini 3 Pro)
+- **静止画生成（Grok）** → Grok Aurora（JSON構造化、Spicy Mode）
 
 ---
 
@@ -88,6 +90,51 @@ Gemini 3 Proによる静止画生成。VeoとGrok両方の入力画像として�
 - `architecture-floorplan.json` - 建築・間取り図
 - `fashion-lookbook.json` - ファッション撮影
 - `social-media-influencer.json` - SNSコンテンツ
+
+---
+
+## Image Generation: Grok Aurora (`resources/image/grok-aurora/`)
+
+xAI Aurora エンジンによる静止画生成。自己回帰型アーキテクチャでJSON構造化プロンプトに最適化。
+
+### 特徴
+
+- **自己回帰型MoE** - トークン予測ベースの生成（拡散モデルとは異なる）
+- **ネイティブJSON対応** - 構造化プロンプトでの精密制御
+- **テキストレンダリング** - 高精度な画像内テキスト生成
+- **Spicy Mode** - 緩和されたコンテンツモデレーション
+- **Grok Imagine連携** - 生成画像をそのままI2V入力に使用可能
+
+### ディレクトリ構造
+
+| Folder | Description |
+|--------|-------------|
+| `keywords/` | shot-composition, cinematography, visual-details |
+| `strategies/` | filter-bypass, json-remix, character-consistency |
+
+### 主要ファイル
+
+| File | Description |
+|------|-------------|
+| `INDEX.md` | **エントリーポイント** |
+| `00-system-prompt.md` | Aurora専用ロール定義 |
+| `json-schema.md` | Aurora専用JSONスキーマ（shot, cinematography, visual_details） |
+| `api-parameters.md` | APIパラメータ仕様 |
+| `strategies/json-remix.md` | スタイル維持・一部変更テクニック |
+| `strategies/character-consistency.md` | キャラクター一貫性 |
+| `strategies/filter-bypass.md` | 静止画用フィルタ回避 |
+
+### Nano Banana Pro vs Grok Aurora
+
+| 項目 | Nano Banana Pro | Grok Aurora |
+|------|-----------------|-------------|
+| **エンジン** | Gemini 3 Pro | xAI Aurora |
+| **アーキテクチャ** | 拡散モデル | 自己回帰型MoE |
+| **JSON対応** | ○ | ◎（ネイティブ） |
+| **テキストレンダリング** | ○（text_module） | ◎（高精度） |
+| **コンテンツ制限** | 標準 | Spicy Mode対応 |
+| **動画連携** | Veo 3.1 I2V | Grok Imagine I2V |
+| **最適用途** | Veoパイプライン | Grokパイプライン |
 
 ---
 
@@ -139,6 +186,7 @@ GeminiがGrok Imagineプロンプトを生成する際のリファレンス（�
 | `troubleshooting.md` | トラブルシューティング |
 | `spicy-mode.md` | Spicy Mode詳細 |
 | `strategies/filter-bypass.md` | フィルタ回避テクニック |
+| `strategies/video-escalation.md` | 静止画→動画でのフィルタ回避 |
 | `keywords/` | カメラ・ライティング・スタイル・オーディオ |
 | `keywords/digital-aesthetics.md` | インターネット美学（glitch, vaporwave等） |
 
@@ -166,11 +214,26 @@ resources/video/veo/reference/INDEX.md を読んで、
 [ユースケース] のVeo 3.1プロンプトを生成して
 ```
 
-### For Gemini (Grok)
+### For Gemini (Grok Imagine - Video)
 
 ```
 resources/video/grok/reference/INDEX.md を読んで、
 [ユースケース] のGrok Imagineプロンプトを生成して
+```
+
+### For Gemini (Grok Aurora - Image)
+
+```
+resources/image/grok-aurora/reference/INDEX.md を読んで、
+[ユースケース] のGrok Aurora静止画プロンプトを生成して
+```
+
+### For Gemini (Grok Pipeline - Image + Video)
+
+```
+resources/image/grok-aurora/reference/INDEX.md と
+resources/video/grok/reference/INDEX.md を読んで、
+[ユースケース] のGrok静止画+動画パイプラインを設計して
 ```
 
 ---
@@ -183,7 +246,8 @@ resources/video/grok/reference/INDEX.md を読んで、
 your-app/
 ├── src/
 └── prompts/
-    ├── image-reference/   ← resources/image/nano-banana-pro/ をコピー
+    ├── image-nano/        ← resources/image/nano-banana-pro/ をコピー
+    ├── image-aurora/      ← resources/image/grok-aurora/reference/ をコピー
     ├── veo-reference/     ← resources/video/veo/reference/ をコピー
     └── grok-reference/    ← resources/video/grok/reference/ をコピー
 ```
@@ -203,14 +267,16 @@ Nano Banana Pro    →    Veo 3.1            →    Video Extension
                         Ingredients mode
 ```
 
-### Grok Imagine Workflow
+### Grok Workflow (Image + Video)
 ```
 [Image]                 [Video]
-Nano Banana Pro    →    Grok Imagine
-(Gemini 3 Pro)          Text-to-Video
+Grok Aurora        →    Grok Imagine
+(xAI Aurora)            Text-to-Video
                         Image-to-Video
                         Native Audio
 ```
+
+**Note**: Grok AuroraからGrok ImagineへのI2V連携は、同一エコシステム内で最もスムーズに動作。Video Escalationテクニックにも最適。
 
 ---
 
@@ -226,11 +292,18 @@ Nano Banana Pro    →    Grok Imagine
 - **Veo 3.1**: Google の動画生成AI（高品質、4/6/8秒）
 - **Ingredients**: Veo用参照画像によるキャラクター一貫性機能
 
+### Grok Aurora（静止画）
+- **Grok Aurora**: xAI の静止画生成AI（自己回帰型MoE、JSON最適化）
+- **JSON Remix**: 参考画像から特徴抽出→一部変更で新規生成
+- **Character Consistency**: アンカーイメージとVLMによる一貫性維持
+- **Spicy Mode (Image)**: 静止画用の緩和されたコンテンツモデレーション
+
 ### Grok Imagine（動画）
 - **Grok Imagine**: xAI の動画生成AI（高速、5-15秒、Aurora Engine）
 - **6-Component Formula**: Grok用プロンプト構造（Subject + Action + Camera + Lighting + Environment + Audio）
 - **Last Frame Method**: Grokで長尺動画を作成するテクニック
-- **Spicy Mode**: Grokの緩和されたコンテンツモデレーション
+- **Spicy Mode (Video)**: 動画用の緩和されたコンテンツモデレーション
+- **Video Escalation**: 静止画→動画変換でフィルタを回避するテクニック
 
 ### 共通
 - **JSON Prompt**: 構造化されたプロンプトフォーマット
@@ -244,7 +317,12 @@ docs/
 ├── sources/              # 調査資料（収集した生データ）
 │   ├── official/         # 公式ドキュメント
 │   ├── community/        # コミュニティ情報
-│   └── grok/             # Grok Imagine調査資料
+│   └── grok/             # Grok調査資料
+├── resources/            # プラットフォーム別調査資料（整理済み）
+│   ├── grok_image/       # Grok Aurora静止画調査資料
+│   ├── grok_video/       # Grok Imagine動画調査資料
+│   ├── nano_banana_pro/  # Nano Banana Pro調査資料
+│   └── veo/              # Veo調査資料
 ├── ask/                  # AI会話ログ（自動保存）
 └── log/                  # 作業ログ
 ```

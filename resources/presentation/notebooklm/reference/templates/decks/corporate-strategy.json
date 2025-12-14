@@ -1,0 +1,189 @@
+{
+  "deck_metadata": {
+    "name": "Corporate Strategy Deck",
+    "target_audience": "C-Suite executives, investors",
+    "total_slides": 10,
+    "duration_minutes": 20,
+    "tone": "Professional, data-driven, confident"
+  },
+  "design_system": {
+    "meta": {
+      "name": "Corporate_Minimal",
+      "tone": "Professional, clean, trustworthy"
+    },
+    "color_palette": {
+      "background": {
+        "primary": "#FFFFFF",
+        "secondary": "#F8F9FA",
+        "dark_accent": "#1A1A2E"
+      },
+      "text": {
+        "primary": "#1A1A2E",
+        "secondary": "#4A4A5A",
+        "muted": "#8A8A9A"
+      },
+      "accents": {
+        "primary_blue": "#0066CC",
+        "success_green": "#00A86B",
+        "alert_red": "#DC3545"
+      }
+    },
+    "typography": {
+      "headings": {
+        "font_family": "Inter",
+        "weight": "Bold",
+        "size": "32pt"
+      },
+      "body": {
+        "font_family": "Inter",
+        "weight": "Regular",
+        "size": "16pt",
+        "line_height": 1.6
+      },
+      "data": {
+        "font_family": "IBM Plex Mono",
+        "weight": "Medium",
+        "size": "48pt"
+      }
+    }
+  },
+  "layout_rules": {
+    "navigation": {
+      "position": "top-left",
+      "format": "{section_number}. {section_title}",
+      "font_size": "10pt"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "24px",
+      "alignment": "strict"
+    },
+    "whitespace": {
+      "minimum_padding": "48px",
+      "canvas_empty_ratio": 0.35
+    }
+  },
+  "slide_sequence": [
+    {
+      "slide_number": 1,
+      "type": "cinematic_center",
+      "content": {
+        "title": "[Company Name]",
+        "subtitle": "Strategic AI Integration Roadmap Q3 2025",
+        "visual": "Company logo centered"
+      },
+      "speaker_notes": "Thank audience, set context for 20-minute presentation"
+    },
+    {
+      "slide_number": 2,
+      "type": "asymmetric_split",
+      "content": {
+        "title": "The Challenge",
+        "narrative": "Problem statement and market context",
+        "key_stat": {
+          "value": "80%",
+          "label": "of enterprise data is unstructured"
+        }
+      },
+      "speaker_notes": "Focus on pain point. Hidden factory consuming resources."
+    },
+    {
+      "slide_number": 3,
+      "type": "arrow_steps",
+      "content": {
+        "title": "Our Solution",
+        "steps": [
+          {"step": 1, "label": "Ingest", "description": "Multi-format document intake"},
+          {"step": 2, "label": "Extract", "description": "AI-powered data extraction"},
+          {"step": 3, "label": "Transform", "description": "Structured output generation"}
+        ]
+      },
+      "speaker_notes": "Walk through the flow left to right"
+    },
+    {
+      "slide_number": 4,
+      "type": "card_grid",
+      "content": {
+        "title": "Key Differentiators",
+        "cards": [
+          {"icon": "brain", "title": "AI-Native", "description": "Built on LLM foundation"},
+          {"icon": "shield", "title": "Enterprise-Grade", "description": "SOC 2, HIPAA compliant"},
+          {"icon": "zap", "title": "10x Faster", "description": "vs. manual processing"}
+        ]
+      },
+      "speaker_notes": "Spend 30 seconds on each differentiator"
+    },
+    {
+      "slide_number": 5,
+      "type": "scientific_chart",
+      "content": {
+        "title": "Market Opportunity",
+        "chart_type": "bar",
+        "data_description": "TAM/SAM/SOM breakdown",
+        "key_insight": "$47B addressable market by 2027"
+      },
+      "speaker_notes": "Focus on SAM - our realistic target"
+    },
+    {
+      "slide_number": 6,
+      "type": "logo_grid",
+      "content": {
+        "title": "Trusted By Industry Leaders",
+        "logo_count": 8,
+        "treatment": "monochrome"
+      },
+      "speaker_notes": "Name-drop 2-3 notable clients"
+    },
+    {
+      "slide_number": 7,
+      "type": "three_step_column",
+      "content": {
+        "title": "Go-to-Market Strategy",
+        "columns": [
+          {"phase": "Phase 1", "title": "Land", "description": "Enterprise pilots"},
+          {"phase": "Phase 2", "title": "Expand", "description": "Department rollout"},
+          {"phase": "Phase 3", "title": "Scale", "description": "Enterprise-wide"}
+        ]
+      },
+      "speaker_notes": "We are currently in Phase 2"
+    },
+    {
+      "slide_number": 8,
+      "type": "vertical_timeline",
+      "content": {
+        "title": "Roadmap",
+        "milestones": [
+          {"date": "Q3 2025", "event": "Series B close"},
+          {"date": "Q4 2025", "event": "European expansion"},
+          {"date": "Q2 2026", "event": "100 enterprise clients"}
+        ]
+      },
+      "speaker_notes": "Highlight key upcoming milestones"
+    },
+    {
+      "slide_number": 9,
+      "type": "asymmetric_split",
+      "content": {
+        "title": "The Ask",
+        "narrative": "Investment terms and use of funds",
+        "key_stat": {
+          "value": "$25M",
+          "label": "Series B target"
+        }
+      },
+      "speaker_notes": "Clear call to action"
+    },
+    {
+      "slide_number": 10,
+      "type": "cinematic_center",
+      "content": {
+        "title": "Thank You",
+        "subtitle": "Questions?",
+        "contact": "ceo@company.com"
+      },
+      "background_override": "#1A1A2E",
+      "text_override": "#FFFFFF",
+      "speaker_notes": "Open floor for Q&A"
+    }
+  ]
+}

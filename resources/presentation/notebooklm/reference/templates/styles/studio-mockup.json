@@ -1,0 +1,96 @@
+{
+  "design_system": {
+    "meta": {
+      "name": "Studio_Mockup",
+      "tone": "Apple-style product presentation",
+      "description": "Clean studio lighting with device mockups as heroes"
+    },
+    "color_palette": {
+      "background": {
+        "primary": "#FFFFFF",
+        "secondary": "#F5F5F7",
+        "dark_mode": "#000000"
+      },
+      "text": {
+        "primary": "#1D1D1F",
+        "secondary": "#6E6E73",
+        "muted": "#86868B"
+      },
+      "accents": {
+        "electric_purple": "#BF5AF2",
+        "acid_yellow": "#FFD60A",
+        "teal": "#64D2FF"
+      }
+    },
+    "typography": {
+      "headings": {
+        "font_family": "SF Pro Display",
+        "weight": "Bold",
+        "size": "48pt",
+        "kerning": "tight (-1%)"
+      },
+      "body": {
+        "font_family": "SF Pro Text",
+        "weight": "Regular",
+        "size": "17pt",
+        "line_height": 1.5
+      },
+      "captions": {
+        "font_family": "SF Mono",
+        "weight": "Regular",
+        "size": "12pt"
+      }
+    }
+  },
+  "layout_rules": {
+    "navigation": {
+      "position": "none",
+      "style": "hidden for clean look"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "20px",
+      "alignment": "strict"
+    },
+    "whitespace": {
+      "minimum_padding": "60px",
+      "canvas_empty_ratio": 0.4,
+      "concept": "Device is the hero"
+    },
+    "special_rules": {
+      "device_coverage": "Device should occupy 70-80% of slide",
+      "lighting": "Studio lighting with subtle reflections",
+      "shadows": "Soft drop shadow for depth",
+      "angles": "Isometric or slight perspective"
+    }
+  },
+  "slide_catalog": [
+    {
+      "id": "hero_device",
+      "name": "Hero Device",
+      "description": "Single device mockup with tagline",
+      "elements": ["device_mockup", "tagline", "subtle_shadow"],
+      "device_options": ["iPhone", "MacBook", "iPad", "Apple Watch"]
+    },
+    {
+      "id": "multi_device",
+      "name": "Multi Device",
+      "description": "Multiple devices showing ecosystem",
+      "elements": ["device_group", "connection_indicators", "headline"]
+    },
+    {
+      "id": "screen_detail",
+      "name": "Screen Detail",
+      "description": "Close-up of device screen with UI",
+      "elements": ["screen_crop", "ui_callouts", "feature_labels"]
+    },
+    {
+      "id": "dark_dramatic",
+      "name": "Dark Dramatic",
+      "description": "Device on black with edge lighting",
+      "elements": ["device_silhouette", "edge_glow", "minimal_text"],
+      "background_override": "#000000",
+      "text_override": "#FFFFFF"
+    }
+  ]
+}

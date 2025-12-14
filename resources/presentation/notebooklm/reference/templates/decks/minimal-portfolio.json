@@ -1,0 +1,169 @@
+{
+  "deck_metadata": {
+    "name": "Minimal Portfolio",
+    "target_audience": "Creative directors, potential clients",
+    "total_slides": 8,
+    "duration_minutes": 10,
+    "tone": "Architectural, refined, understated"
+  },
+  "design_system": {
+    "meta": {
+      "name": "Kyoto_Minimal",
+      "tone": "Architectural, negative space emphasis",
+      "description": "Japanese minimalism with Western typography"
+    },
+    "color_palette": {
+      "background": {
+        "primary": "#E9E9E9",
+        "secondary": "#FFFFFF",
+        "dark_mode": "#1A1A1A"
+      },
+      "text": {
+        "primary": "#000000",
+        "secondary": "#333333",
+        "muted": "#888888"
+      },
+      "accents": {
+        "highlight": "#FF3333",
+        "structural_lines": "#000000"
+      }
+    },
+    "typography": {
+      "headings": {
+        "font_family": "Helvetica Now Display",
+        "weight": "Bold",
+        "case": "uppercase",
+        "kerning": "tight (-2%)"
+      },
+      "body": {
+        "font_family": "Noto Sans JP",
+        "weight": "Regular",
+        "size": "14pt",
+        "line_height": 1.8
+      },
+      "accent_english": {
+        "font_family": "Helvetica Now",
+        "weight": "Light",
+        "size": "10pt",
+        "case": "uppercase"
+      }
+    }
+  },
+  "layout_rules": {
+    "navigation": {
+      "position": "top-left",
+      "format": "{section_number}. {section_title}",
+      "font_size": "10pt"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "20px",
+      "alignment": "strict"
+    },
+    "whitespace": {
+      "minimum_padding": "60px",
+      "canvas_empty_ratio": 0.4,
+      "concept": "Ma (間) - intentional emptiness"
+    },
+    "special_rules": {
+      "borders": "Never use decorative borders",
+      "shadows": "Subtle or none",
+      "imagery": "Desaturated, architectural"
+    }
+  },
+  "slide_sequence": [
+    {
+      "slide_number": 1,
+      "type": "scatter_title",
+      "content": {
+        "title": "[Portfolio Name]",
+        "subtitle": "Selected Works 2023-2025",
+        "badges": ["Award 1", "Award 2", "Award 3"]
+      },
+      "speaker_notes": "Brief introduction, let the title breathe"
+    },
+    {
+      "slide_number": 2,
+      "type": "full_bleed",
+      "content": {
+        "project_name": "Project Alpha",
+        "image_description": "Hero shot of the project",
+        "caption": "Client Name / Category / Year"
+      },
+      "speaker_notes": "Let the image speak first"
+    },
+    {
+      "slide_number": 3,
+      "type": "photo_list_split",
+      "content": {
+        "project_name": "Project Alpha",
+        "image_position": "left",
+        "details": [
+          {"label": "Client", "value": "Company Name"},
+          {"label": "Role", "value": "Lead Designer"},
+          {"label": "Scope", "value": "Brand Identity, Web"},
+          {"label": "Result", "value": "+40% engagement"}
+        ]
+      },
+      "speaker_notes": "Walk through the project details"
+    },
+    {
+      "slide_number": 4,
+      "type": "full_bleed",
+      "content": {
+        "project_name": "Project Beta",
+        "image_description": "Hero shot of second project",
+        "caption": "Client Name / Category / Year"
+      },
+      "speaker_notes": "Transition to next project"
+    },
+    {
+      "slide_number": 5,
+      "type": "card_grid",
+      "content": {
+        "title": "Additional Works",
+        "cards": [
+          {"image": "thumbnail_1", "title": "Project C", "year": "2024"},
+          {"image": "thumbnail_2", "title": "Project D", "year": "2024"},
+          {"image": "thumbnail_3", "title": "Project E", "year": "2023"},
+          {"image": "thumbnail_4", "title": "Project F", "year": "2023"}
+        ]
+      },
+      "speaker_notes": "Quick overview of other works"
+    },
+    {
+      "slide_number": 6,
+      "type": "chat_dialogue",
+      "content": {
+        "title": "Client Testimonials",
+        "quotes": [
+          {"author": "CEO, Company A", "quote": "Exceptional attention to detail..."},
+          {"author": "Creative Director, Company B", "quote": "Transformed our brand..."}
+        ]
+      },
+      "speaker_notes": "Social proof"
+    },
+    {
+      "slide_number": 7,
+      "type": "minimal_map",
+      "content": {
+        "title": "Global Reach",
+        "locations": ["Tokyo", "London", "New York", "Singapore"],
+        "note": "Remote collaboration worldwide"
+      },
+      "speaker_notes": "Highlight international experience"
+    },
+    {
+      "slide_number": 8,
+      "type": "cinematic_center",
+      "content": {
+        "title": "Let's Create Together",
+        "contact": "hello@studio.com",
+        "tagline": "Thoughtful design for meaningful impact"
+      },
+      "background_override": "#1A1A1A",
+      "text_override": "#FFFFFF",
+      "speaker_notes": "Clear call to action with contact"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "design_system": {
+    "meta": {
+      "name": "Japonism_Textile",
+      "tone": "Traditional Japanese, refined, cultural",
+      "description": "Kimono patterns, ukiyo-e, kumihimo, gold leaf accents"
+    },
+    "color_palette": {
+      "background": {
+        "primary": "#F5F1E6",
+        "secondary": "#FFFEF9",
+        "accent": "#2C2416"
+      },
+      "text": {
+        "primary": "#1A1A1A",
+        "secondary": "#4A4A4A",
+        "muted": "#7A7A7A"
+      },
+      "accents": {
+        "gold": "#B8860B",
+        "vermillion": "#E34234",
+        "indigo": "#264653",
+        "moss": "#6B7B3C"
+      }
+    },
+    "typography": {
+      "headings": {
+        "font_family": "Hiragino Mincho",
+        "weight": "Bold",
+        "size": "28pt",
+        "vertical_option": true
+      },
+      "body": {
+        "font_family": "Noto Serif JP",
+        "weight": "Regular",
+        "size": "14pt",
+        "line_height": 2.0
+      },
+      "english_accent": {
+        "font_family": "Cormorant Garamond",
+        "weight": "Light",
+        "case": "lowercase"
+      }
+    }
+  },
+  "layout_rules": {
+    "navigation": {
+      "position": "top-right",
+      "format": "漢数字",
+      "font_size": "12pt",
+      "style": "vertical"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "24px",
+      "alignment": "asymmetric"
+    },
+    "whitespace": {
+      "minimum_padding": "60px",
+      "canvas_empty_ratio": 0.45,
+      "concept": "Ma (間) - intentional emptiness"
+    },
+    "special_rules": {
+      "straight_lines": "Avoid - use organic curves",
+      "symmetry": "Embrace asymmetry (非対称の美)",
+      "layering": "Overlap elements like kimono layers",
+      "gold_accents": "Use sparingly for emphasis"
+    }
+  },
+  "slide_catalog": [
+    {
+      "id": "vertical_title",
+      "name": "縦書きタイトル",
+      "description": "Vertical Japanese text with gold accent",
+      "elements": ["vertical_headline", "horizontal_subhead", "gold_line"]
+    },
+    {
+      "id": "pattern_background",
+      "name": "紋様背景",
+      "description": "Subtle textile pattern with centered content",
+      "elements": ["pattern_overlay", "content_block", "family_crest"]
+    },
+    {
+      "id": "ukiyo_e_split",
+      "name": "浮世絵分割",
+      "description": "Woodblock-style illustration with text panel",
+      "elements": ["illustration", "text_cartouche", "seal_stamp"]
+    },
+    {
+      "id": "gold_leaf_accent",
+      "name": "金箔アクセント",
+      "description": "Dark background with scattered gold leaf",
+      "elements": ["dark_base", "gold_particles", "white_text"],
+      "background_override": "#2C2416",
+      "text_override": "#FFFEF9"
+    }
+  ]
+}

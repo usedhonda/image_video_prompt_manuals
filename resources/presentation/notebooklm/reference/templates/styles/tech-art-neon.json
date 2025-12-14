@@ -1,0 +1,100 @@
+{
+  "design_system": {
+    "meta": {
+      "name": "Tech_Art_Neon",
+      "tone": "Avant-garde constructivism, digital art",
+      "description": "Precise grid lines with neon accents on warm base"
+    },
+    "color_palette": {
+      "background": {
+        "primary": "#E8E4DC",
+        "secondary": "#F5F2EC",
+        "dark_mode": "#1A1A1A"
+      },
+      "text": {
+        "primary": "#1A1A1A",
+        "secondary": "#4A4A4A",
+        "muted": "#8A8A8A"
+      },
+      "accents": {
+        "neon_yellow": "#E6FF00",
+        "neon_cyan": "#00FFFF",
+        "grid_lines": "#CCCCCC"
+      }
+    },
+    "typography": {
+      "headings": {
+        "font_family": "Space Grotesk",
+        "weight": "Bold",
+        "case": "uppercase",
+        "kerning": "wide (+5%)"
+      },
+      "body": {
+        "font_family": "IBM Plex Mono",
+        "weight": "Regular",
+        "size": "14pt",
+        "line_height": 1.6
+      },
+      "labels": {
+        "font_family": "Inter",
+        "weight": "Medium",
+        "size": "10pt",
+        "case": "uppercase"
+      }
+    }
+  },
+  "layout_rules": {
+    "navigation": {
+      "position": "top-left",
+      "format": "[{section_number}]",
+      "font_size": "10pt",
+      "style": "bracketed"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "16px",
+      "alignment": "strict",
+      "visible_grid": true,
+      "grid_color": "#CCCCCC",
+      "grid_opacity": 0.3
+    },
+    "whitespace": {
+      "minimum_padding": "40px",
+      "canvas_empty_ratio": 0.35,
+      "concept": "Precision over emptiness"
+    },
+    "special_rules": {
+      "color_limit": "3 colors maximum (background, monochrome, neon)",
+      "grid_visibility": "Show graph paper grid as design element",
+      "neon_usage": "Highlight key elements only"
+    }
+  },
+  "slide_catalog": [
+    {
+      "id": "grid_title",
+      "name": "Grid Title",
+      "description": "Bold headline on visible grid with neon accent",
+      "elements": ["headline", "grid_overlay", "neon_highlight"]
+    },
+    {
+      "id": "data_construct",
+      "name": "Data Construct",
+      "description": "Charts and diagrams with precise grid alignment",
+      "elements": ["chart", "axis_labels", "neon_data_points"]
+    },
+    {
+      "id": "wireframe_diagram",
+      "name": "Wireframe Diagram",
+      "description": "Technical illustration with construction lines visible",
+      "elements": ["wireframe", "annotations", "dimension_lines"]
+    },
+    {
+      "id": "neon_dark",
+      "name": "Neon Dark Mode",
+      "description": "Dark background with neon text and elements",
+      "elements": ["neon_headline", "glowing_elements", "grid_overlay"],
+      "background_override": "#1A1A1A",
+      "text_override": "#E6FF00"
+    }
+  ]
+}

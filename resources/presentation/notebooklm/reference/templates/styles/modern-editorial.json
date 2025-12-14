@@ -1,0 +1,94 @@
+{
+  "design_system": {
+    "meta": {
+      "name": "Modern_Editorial",
+      "tone": "Editorial, airy, magazine-like",
+      "description": "Kinfolk magazine style with generous whitespace and warm tones"
+    },
+    "color_palette": {
+      "background": {
+        "primary": "#F5F0E8",
+        "secondary": "#FFFFFF",
+        "accent_warm": "#E8DFD5"
+      },
+      "text": {
+        "primary": "#2C2C2C",
+        "secondary": "#5A5A5A",
+        "muted": "#8A8A8A"
+      },
+      "accents": {
+        "highlight": "#C4A77D",
+        "structural_lines": "#2C2C2C"
+      }
+    },
+    "typography": {
+      "headings": {
+        "font_family": "Playfair Display",
+        "weight": "Regular",
+        "case": "capitalize",
+        "kerning": "normal"
+      },
+      "body": {
+        "font_family": "Georgia",
+        "weight": "Regular",
+        "size": "16pt",
+        "line_height": 1.7
+      },
+      "captions": {
+        "font_family": "Inter",
+        "weight": "Light",
+        "size": "10pt",
+        "case": "uppercase"
+      }
+    }
+  },
+  "layout_rules": {
+    "navigation": {
+      "position": "top-left",
+      "format": "{section_number}",
+      "font_size": "10pt",
+      "style": "minimal"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "32px",
+      "alignment": "flexible"
+    },
+    "whitespace": {
+      "minimum_padding": "80px",
+      "canvas_empty_ratio": 0.5,
+      "concept": "Breathing room - let content breathe"
+    },
+    "special_rules": {
+      "borders": "Never use borders or boxes",
+      "imagery": "Desaturated, warm-toned photography",
+      "dividers": "Hairline only (0.5px)"
+    }
+  },
+  "slide_catalog": [
+    {
+      "id": "editorial_title",
+      "name": "Editorial Title",
+      "description": "Large serif headline with generous margins",
+      "elements": ["headline", "subhead", "minimal_decoration"]
+    },
+    {
+      "id": "photo_essay",
+      "name": "Photo Essay",
+      "description": "Full-bleed warm photo with caption overlay",
+      "elements": ["hero_image", "caption_block"]
+    },
+    {
+      "id": "pull_quote",
+      "name": "Pull Quote",
+      "description": "Large italic quote with attribution",
+      "elements": ["quote_text", "attribution", "subtle_line"]
+    },
+    {
+      "id": "two_column_text",
+      "name": "Two Column Text",
+      "description": "Magazine-style dual column layout",
+      "elements": ["column_left", "column_right", "drop_cap"]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "design_system": {
+    "meta": {
+      "name": "Sports_Athletic",
+      "tone": "Dynamic, energetic, speed",
+      "description": "Bold angles, high contrast, motion-inspired design"
+    },
+    "color_palette": {
+      "background": {
+        "primary": "#000000",
+        "secondary": "#1A1A1A",
+        "accent": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#FFFFFF",
+        "secondary": "#CCCCCC",
+        "muted": "#808080"
+      },
+      "accents": {
+        "volt_lime": "#BFFF00",
+        "neon_orange": "#FF6B00",
+        "electric_blue": "#00D4FF"
+      }
+    },
+    "typography": {
+      "headings": {
+        "font_family": "Bebas Neue",
+        "weight": "Bold",
+        "case": "uppercase",
+        "kerning": "tight (-3%)",
+        "style": "italic for motion"
+      },
+      "body": {
+        "font_family": "Roboto Condensed",
+        "weight": "Regular",
+        "size": "16pt",
+        "line_height": 1.4
+      },
+      "stats": {
+        "font_family": "Oswald",
+        "weight": "Bold",
+        "size": "72pt+"
+      }
+    }
+  },
+  "layout_rules": {
+    "navigation": {
+      "position": "top-right",
+      "format": "{section_number}",
+      "font_size": "14pt",
+      "style": "bold_angled"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "16px",
+      "alignment": "dynamic"
+    },
+    "whitespace": {
+      "minimum_padding": "40px",
+      "canvas_empty_ratio": 0.25,
+      "concept": "Fill with energy"
+    },
+    "special_rules": {
+      "angles": "Use diagonal cuts and parallelograms",
+      "motion_blur": "Add speed lines to imagery",
+      "contrast": "Maximum black/white/neon contrast",
+      "photo_treatment": "High contrast, desaturated with color pop"
+    }
+  },
+  "slide_catalog": [
+    {
+      "id": "action_hero",
+      "name": "Action Hero",
+      "description": "Full-bleed action photo with angled text overlay",
+      "elements": ["action_photo", "angled_headline", "speed_lines"]
+    },
+    {
+      "id": "stat_blast",
+      "name": "Stat Blast",
+      "description": "Giant statistic with supporting context",
+      "elements": ["huge_number", "unit_label", "comparison_bar"]
+    },
+    {
+      "id": "vs_matchup",
+      "name": "VS Matchup",
+      "description": "Split screen comparison with VS divider",
+      "elements": ["left_competitor", "vs_badge", "right_competitor"]
+    },
+    {
+      "id": "diagonal_split",
+      "name": "Diagonal Split",
+      "description": "Angled division between photo and content",
+      "elements": ["photo_section", "diagonal_divider", "content_section"]
+    },
+    {
+      "id": "countdown",
+      "name": "Countdown",
+      "description": "Large numbers with urgency styling",
+      "elements": ["countdown_number", "event_name", "pulse_effect"]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Yoshifuji Method uses a 3-layer structure to control NotebookLM slide generation:
+NotebookLM slide generation can be controlled via a 3-layer JSON architecture:
 
 | Layer | Japanese | Purpose |
 |-------|----------|---------|

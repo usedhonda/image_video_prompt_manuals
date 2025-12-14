@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Yoshifuji Method defines 18 slide archetypes. Select appropriate types based on content needs.
+This catalog defines 18 slide archetypes for structured presentation design. Select appropriate types based on content needs.
 
 ---
 

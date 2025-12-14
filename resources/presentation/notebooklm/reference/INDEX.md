@@ -144,4 +144,4 @@ notebooklm/
 
 | Version | Date | Changes |
 |---------|------|---------|
-| v1.0 | 2025-12 | Initial release with Yoshifuji method |
+| v1.0 | 2025-12 | Initial release with 3-layer architecture |

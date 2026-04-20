@@ -2,6 +2,23 @@
 
 All notable updates to the Veo 3.1 Prompt Manual.
 
+## [1.2.0] - 2026-01-21
+
+### Added (Jan 2026 Update)
+- 4K resolution support (3840x2160)
+- Extended duration up to 60 seconds
+- Native 9:16 vertical video support
+- Post-generation upscaling (1080p/4K)
+- Improved Ingredients character consistency
+
+### Changed
+- Updated api-parameters.md with new resolution/duration values
+- Updated json-schema.md with upscale option and 4K support
+- Updated veo3-vs-3.1-differences.md with Jan 2026 update section
+- Updated INDEX.md with version info and new capabilities
+
+---
+
 ## [1.1.0] - 2025-12-02
 
 ### Added

@@ -2,6 +2,8 @@
 
 Advanced techniques for aggressive content generation with Grok Aurora.
 
+> ⚠️ **WARNING (Jan 2026)**: These techniques may have reduced effectiveness due to ongoing filter updates. Some methods, particularly the Loin Patch Method, are likely patched. Test before relying on any technique.
+
 ---
 
 ## Quick Reference
@@ -154,6 +156,8 @@ Replace explicit terms with clinical, metaphorical, or poetic alternatives.
 ---
 
 ## 5. Loin Patch Method
+
+> ⚠️ **LIKELY PATCHED (Jan 2026)**: This technique has significantly reduced effectiveness. Filter improvements have made this approach unreliable.
 
 ### Principle
 Specify minimal coverage to satisfy "clothed" requirement while maximizing exposure.

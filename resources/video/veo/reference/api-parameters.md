@@ -131,9 +131,9 @@ Content-Type: application/json
 
 ### durationSeconds
 - **Type**: Integer
-- **Valid Values**: `4`, `6`, `8` only
+- **Valid Values**: `4`, `5`, `6`, `7`, `8` (standard) | up to `60` (extended generation)
 - **Default**: 8
-- **Note**: Interpolation may force specific durations
+- **Note**: Extended durations (9-60s) available since Jan 2026 update. Interpolation may force specific durations.
 
 ### aspectRatio
 - **Type**: String
@@ -143,11 +143,18 @@ Content-Type: application/json
 
 ### resolution
 - **Type**: String
-- **Valid Values**: `"720p"`, `"1080p"`
+- **Valid Values**: `"720p"`, `"1080p"`, `"4K"` (3840x2160)
 - **Default**: `"720p"`
 - **Constraints**:
   - Video extension: 720p only
-  - 1080p may limit duration options
+  - 4K available since Jan 2026 update
+  - Higher resolution may increase generation time
+
+### upscale (NEW - Jan 2026)
+- **Type**: Object
+- **Use**: Post-generation upscaling
+- **Valid Targets**: `"1080p"`, `"4K"`
+- **Note**: Can upscale 720p output to higher resolution after generation
 
 ### personGeneration
 - **Type**: String
@@ -245,9 +252,12 @@ GET https://{LOCATION}-aiplatform.googleapis.com/v1/{operation_name}
 | lastFrame | ❌ | ❌ | ❌ | ✅ Required | ❌ |
 | video | ❌ | ❌ | ❌ | ❌ | ✅ Required |
 | referenceImages | ❌ | ❌ | ✅ Required | ❌ | ❌ |
+| 4K | ✅ | ✅ | ✅ | ✅ | ❌ (720p only) |
 | 1080p | ✅ | ✅ | ✅ | ✅ | ❌ (720p only) |
+| 60s duration | ✅ | ✅ | ⚠️ May vary | ❌ | ✅ |
 | 8s duration | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 4s/6s duration | ✅ | ✅ | ⚠️ May vary | ⚠️ Usually 8s | ✅ |
+| Upscaling | ✅ | ✅ | ✅ | ✅ | ⚠️ Limited |
 
 ---
 

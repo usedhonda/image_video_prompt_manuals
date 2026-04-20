@@ -23,6 +23,8 @@ Prompt = [Subject] + [Action] + [Camera] + [Lighting] + [Environment] + [Audio]
 | **Environment/Setting** | Place, time, duration | Light conditions (Golden Hour), weather, explicit duration ("10 seconds") |
 | **Audio Direction** | Sound instructions | Use brackets: `[Audio: ambient sounds only]` for better recognition |
 
+> **Note (Jan 2026)**: Audio-enabled videos now support 6-15 second durations with native integrated sound generation.
+
 ---
 
 ## API JSON Request Format
@@ -44,8 +46,8 @@ Prompt = [Subject] + [Action] + [Camera] + [Lighting] + [Environment] + [Audio]
 - `model`: `grok-imagine-v1` or latest `grok-2-video`
 - `prompt`: Video description, 800-1200 chars recommended for best results
 - `aspect_ratio`: `"16:9"` (cinematic), `"9:16"` (mobile), `"1:1"` (square)
-- `mode`: `"normal"` (balanced), `"fun"` (cartoon/extreme), `"spicy"` (relaxed moderation)
-- `duration`: 5-15 seconds
+- `mode`: `"normal"` (balanced), `"fun"` (cartoon/extreme), `"spicy"` (relaxed moderation), `"meme"` (viral content)
+- `duration`: 6-15 seconds (with audio)
 
 ### Image-to-Video (I2V) Basic Structure
 
@@ -403,3 +405,48 @@ For applications using Grok 4.1 as orchestrator, define the video tool:
 ```
 
 This allows Grok 4.1 to enhance user requests before passing to Aurora.
+
+---
+
+## Meme Mode (NEW - Jan 2026)
+
+Optimized for viral social media content.
+
+### Scenario O: Meme Mode Template
+
+**Goal:** Quick viral content generation with trending aesthetics.
+
+```json
+{
+  "model": "grok-imagine-v1",
+  "aspect_ratio": "9:16",
+  "mode": "meme",
+  "duration": 6,
+  "prompt": "Subject: Surprised Pikachu face on office worker. Action: Dramatic zoom-in as realization hits, freeze frame with 'bruh' sound effect timing. Camera: Whip zoom to face, slight shake on impact. Lighting: Harsh fluorescent office lighting, comedic timing. Style: Deep fried meme aesthetic, oversaturated, emoji overlays. Audio: Vine boom sound effect at 3 seconds, dramatic reverb."
+}
+```
+
+### Meme Mode Characteristics
+
+| Aspect | Normal Mode | Meme Mode |
+|--------|-------------|-----------|
+| Style | Cinematic | Internet-native |
+| Audio | Realistic SFX | Meme sounds (Vine boom, bruh, etc.) |
+| Pacing | Natural | Comedic timing |
+| Effects | Subtle | Exaggerated (zoom, shake) |
+| Color | Balanced | Oversaturated/deep fried |
+
+### Meme Audio Keywords
+
+- `"Vine boom sound effect"` - Classic impact sound
+- `"bruh sound"` - Reaction audio
+- `"dramatic reverb"` - Echo effect for emphasis
+- `"record scratch"` - Freeze frame moment
+- `"to be continued music"` - Cliffhanger ending
+
+### Use Cases
+
+1. **Reaction Content**: Exaggerated facial expressions
+2. **POV Videos**: First-person perspective humor
+3. **Freeze Frame**: "It was at this moment..."
+4. **Trend Recreation**: Mimic viral formats

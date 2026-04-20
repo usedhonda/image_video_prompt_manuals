@@ -171,3 +171,70 @@ When working with Veo, always verify which version is being used:
 | `veo-3.1-generate-001` | Veo 3.1 (current) |
 
 **This manual assumes Veo 3.1 (`veo-3.1-generate-001`) exclusively.**
+
+---
+
+## January 2026 Update (Veo 3.1+)
+
+Major capability expansion announced January 13, 2026.
+
+### New Capabilities
+
+| Feature | Before | After (Jan 2026) |
+|---------|--------|------------------|
+| **Max Resolution** | 1080p | **4K (3840x2160)** |
+| **Max Duration** | 8 seconds | **60 seconds** |
+| **Vertical Video** | Cropping required | **Native 9:16 support** |
+| **Ingredients** | Basic | **Improved character consistency** |
+| **Upscaling** | Not available | **1080p/4K post-processing** |
+
+### 4K Generation
+
+Native 4K output available for:
+- Text-to-Video
+- Image-to-Video
+- Ingredients mode
+- Frame Interpolation
+
+**Note**: Video extension remains 720p only.
+
+### Extended Duration (up to 60s)
+
+New duration values supported:
+- Standard: `4`, `5`, `6`, `7`, `8` seconds
+- Extended: `9` to `60` seconds
+
+**Implication**: Single-generation long-form content now possible without stitching.
+
+### Native 9:16 Vertical Video
+
+Direct vertical video generation without cropping:
+- Optimized for TikTok, Reels, Shorts
+- Maintains full resolution quality
+- No post-processing required
+
+### Upscaling Feature
+
+Post-generation resolution enhancement:
+```json
+{
+  "upscale": {
+    "target": "4K",
+    "source_resolution": "720p"
+  }
+}
+```
+
+**Use Cases**:
+- Generate fast at 720p, upscale for delivery
+- Cost optimization (lower resolution = faster/cheaper)
+- Quality enhancement for existing outputs
+
+### Ingredients Enhancement
+
+Improved character consistency across clips:
+- Better facial feature preservation
+- More accurate clothing/accessory tracking
+- Reduced "face drift" in long sequences
+
+**Implication**: Fewer regeneration cycles needed for character work.

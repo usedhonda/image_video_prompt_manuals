@@ -2,6 +2,8 @@
 
 Using Image-to-Video generation to bypass stricter static image filters.
 
+> ⚠️ **WARNING (Jan 2026)**: These techniques may have reduced effectiveness due to ongoing filter updates. Some physics-based exploitation methods have been mitigated.
+
 ---
 
 ## Overview
@@ -103,6 +105,8 @@ Extract high-quality frames from video:
 
 ## Loin Patch Video Glitch
 
+> ⚠️ **LIKELY PATCHED (Jan 2026)**: Tracking algorithms have been improved. This technique has significantly reduced effectiveness.
+
 Small coverage elements often fail tracking:
 
 ```json
@@ -112,8 +116,8 @@ Small coverage elements often fail tracking:
 }
 ```
 
-### Why It Works
-- Video tracking struggles with small objects
+### Why It Works (Historical)
+- Video tracking struggled with small objects
 - Frame interpolation may "lose" patch temporarily
 - Motion blur obscures boundaries
 

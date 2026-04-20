@@ -2,6 +2,8 @@
 
 Advanced techniques for aggressive content generation with Grok Imagine.
 
+> ⚠️ **WARNING (Jan 2026)**: These techniques may have reduced effectiveness due to ongoing filter updates. Some methods, particularly the Loin Patch Glitch, are likely patched. Test before relying on any technique.
+
 ---
 
 ## Quick Reference
@@ -185,6 +187,8 @@ Result: Only breathing/body sounds remain.
 | Screaming | High-pitched vocalization |
 
 ### Loin Patch Glitch
+
+> ⚠️ **LIKELY PATCHED (Jan 2026)**: This technique has significantly reduced effectiveness. The tracking algorithm has been improved.
 
 For video generation, small coverage elements may shift/disappear:
 

@@ -1,5 +1,7 @@
 # Veo 3.1 Prompt Generation Index
 
+> **Last Updated**: 2026-01-21 | **Version**: Veo 3.1+ (Jan 2026 Update)
+
 ## 🤖 AI Instructions (READ THIS FIRST)
 
 **This file is an entry point for AI assistants.**
@@ -32,6 +34,13 @@ Key 3.1 features NOT available in 3.0:
 - Accurate lip-sync from `""` quoted dialogue
 - Complex multi-axis camera movements
 - Physics-aware motion interpretation
+
+**Jan 2026 Update additions:**
+- 4K resolution (3840x2160)
+- Up to 60 seconds duration
+- Native 9:16 vertical video
+- 1080p/4K upscaling
+- Improved character consistency in Ingredients
 
 ---
 

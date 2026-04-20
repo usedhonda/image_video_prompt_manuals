@@ -4,6 +4,16 @@
 
 Grok Imagine provides video generation through REST API endpoints. This document covers the available parameters and their usage.
 
+> ⚠️ **DEPRECATION NOTICE (Jan 12, 2026)**: Live Search API has been deprecated. Use native web search capabilities instead.
+
+---
+
+## Performance
+
+- **Average Generation Time**: Under 17 seconds (T2V)
+- **Quality Modes**: 720p (fast) / 1080p (quality)
+- **Audio Generation**: Native integrated (6-15 seconds with audio)
+
 ---
 
 ## Endpoints
@@ -30,11 +40,13 @@ GET /api/v1/video/status?taskId=YOUR_TASK_ID
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `prompt` | string | Yes | Text description of desired video (800-1200 chars recommended) |
-| `duration` | string | No | Video length: `"5"` or `"8"` seconds |
+| `duration` | string | No | Video length: `"6"` to `"15"` seconds (audio-enabled) |
 | `quality` | string | No | Resolution: `"720p"` or `"1080p"` |
 | `aspectRatio` | string | No | Frame ratio (see below) |
 | `imageUrl` | string | No | Source image URL for Image-to-Video |
 | `mode` | string | No | Creative mode (see below) |
+| `extend` | boolean | No | Enable video extension (Web UI only) |
+| `upscale_hd` | boolean | No | Enable HD upscaling (Web UI only) |
 
 ---
 
@@ -160,11 +172,20 @@ print(result)
 
 ---
 
+## Subscription Tiers (Jan 2026)
+
+| Tier | Price | Daily Limit | Features |
+|------|-------|-------------|----------|
+| **Free** | $0 | 10/day | Basic T2V, 720p |
+| **Heavy** | $30/month | 100/day | T2V + I2V, 1080p |
+| **SuperGrok** | $300/month | 500/day | All features, priority queue, HD upscaling |
+
 ## Rate Limits & Credits
 
 - API calls require authentication via Bearer token
 - Credit consumption varies by quality and duration
 - Higher quality (1080p) uses more credits
+- SuperGrok subscribers get priority queue access
 - Check provider documentation for specific limits
 
 ---
@@ -183,7 +204,39 @@ print(result)
 ## Best Practices
 
 1. **Start with 720p** for testing, upgrade to 1080p for final
-2. **Use 5-second duration** for quick iterations
+2. **Use 6-second duration** for quick iterations (minimum with audio)
 3. **Poll status endpoint** every 2-3 seconds until complete
-4. **Handle async nature** - video generation takes time
+4. **Handle async nature** - video generation averages <17 seconds
 5. **Cache taskIds** to avoid duplicate requests
+6. **Use HD upscaling** for final delivery (SuperGrok only)
+
+---
+
+## Video Extension (Web UI Only)
+
+Extend existing videos by generating continuation clips:
+
+```json
+{
+  "source_video_id": "existing-task-id",
+  "extend": true,
+  "prompt": "Continue the scene with..."
+}
+```
+
+**Note**: Currently available in Web UI only, not in API.
+
+---
+
+## HD Upscaling (Web UI Only)
+
+Enhance video quality post-generation:
+
+```json
+{
+  "source_video_id": "existing-task-id",
+  "upscale_hd": true
+}
+```
+
+**Note**: Requires SuperGrok subscription. Web UI only.

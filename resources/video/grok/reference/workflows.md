@@ -4,6 +4,73 @@
 
 Advanced techniques for creating longer videos, maintaining character consistency, and achieving professional results with Grok Imagine.
 
+> **New in Jan 2026**: Video Extension and HD Upscaling now available in Web UI.
+
+---
+
+## Video Extension (NEW)
+
+Native video extension available in Web UI (SuperGrok required).
+
+### How It Works
+
+1. **Generate Base Video**: Create initial 6-15 second clip
+2. **Click Extend**: Use Web UI's extend button
+3. **Continuation Prompt**: Describe what happens next
+4. **Seamless Stitch**: System auto-blends clips
+
+### Best Practices
+
+- Keep continuation prompts consistent with original style
+- Use the same camera movement keywords
+- Reference original subject description
+- Max extension: varies by subscription tier
+
+### Example Workflow
+
+```
+1. T2V: "Samurai walking through rain in neon alley" (10s)
+2. Extend: "He stops, draws katana, turns to face camera" (8s)
+3. Extend: "Lightning flash reveals enemy behind him" (6s)
+Total: 24 seconds continuous footage
+```
+
+**Advantage over Last Frame Method**: No quality degradation between clips.
+
+---
+
+## HD Upscaling (NEW)
+
+Post-processing quality enhancement for finished videos.
+
+### Requirements
+
+- SuperGrok subscription
+- Source video generated in Grok Imagine
+- Web UI access
+
+### Workflow
+
+1. Generate video at 720p (faster, cheaper)
+2. Review and select best output
+3. Apply HD upscaling in Web UI
+4. Download 1080p result
+
+### When to Use
+
+| Scenario | Upscale? |
+|----------|----------|
+| Iteration/testing | No |
+| Final delivery | Yes |
+| Social media (compressed) | Optional |
+| Professional use | Yes |
+
+### Limitations
+
+- Processing time: 30-60 seconds
+- Cannot upscale third-party videos
+- One upscale per video (no stacking)
+
 ---
 
 ## The Last Frame Method

@@ -77,10 +77,11 @@ Generate high-quality video clips with precise control over cinematography, acti
   },
   "meta": {
     "duration": 8,
-    "resolution": "1080p | 720p",
+    "resolution": "4K | 1080p | 720p",
     "aspect_ratio": "16:9 | 9:16",
     "fps": 24,
-    "model": "veo-3.1-generate-001 | veo-3.1-fast-generate-001"
+    "model": "veo-3.1-generate-001 | veo-3.1-fast-generate-001",
+    "upscale": "1080p | 4K | none"
   }
 }
 ```
@@ -221,14 +222,17 @@ Standard schema, no additional fields required.
 ## Validation Rules
 
 ### Duration Constraints
-- Valid values: `4`, `6`, `8` seconds only
+- Standard values: `4`, `5`, `6`, `7`, `8` seconds
+- Extended generation: up to `60` seconds (Jan 2026 update)
 - Interpolation: typically locked to `8` seconds
 - Extension input: max 141 seconds
 
 ### Resolution Constraints
+- `4K` (3840x2160): Highest quality, Jan 2026 update
 - `1080p`: Full quality, standard generation
 - `720p`: Required for video extension
 - Extension: 720p output only
+- Upscaling: Can post-process to 1080p or 4K
 
 ### Aspect Ratio Constraints
 - `16:9`: Landscape (standard)

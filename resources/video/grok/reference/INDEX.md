@@ -1,5 +1,7 @@
 # Grok Imagine Prompt Generation Index
 
+> **Last Updated**: 2026-01-21 | **Version**: Jan 2026 Update
+
 ## 🤖 AI Instructions (READ THIS FIRST)
 
 **This file is an entry point for AI assistants.**
@@ -30,8 +32,16 @@ Key Grok Imagine characteristics:
 - **No negative prompts** - describe what you WANT, not what to avoid
 - **No strict char limit** - detailed prompts (800-1200 chars) recommended; some third-party tools may impose limits
 - **Native audio** - BGM, dialogue, and singing integrated
-- **Fast generation** - under 30 seconds typically
+- **Fast generation** - under 17 seconds average (Jan 2026)
 - **JSON supported** - structured prompts improve precision
+
+**Jan 2026 Update:**
+- Live Search API deprecated (Jan 12, 2026)
+- Video Extension (Web UI)
+- HD Upscaling (SuperGrok)
+- Meme Mode added
+- Duration: 6-15 seconds with audio
+- New subscription tier: SuperGrok ($300/month)
 
 ---
 
@@ -180,10 +190,11 @@ Key synergies:
 
 | Feature | Grok Imagine | Veo 3.1 |
 |---------|--------------|---------|
-| Cost | $30/month (500/day) | $0.40-0.75/sec |
-| Speed | ~30 seconds | Minutes |
+| Cost | $30-300/month | $0.40-0.75/sec |
+| Speed | ~17 seconds | Minutes |
 | Quality | Experimental | Professional |
-| Duration | 5-15 seconds | 4-8 seconds |
+| Duration | 6-15 seconds | 4-60 seconds |
+| Max Resolution | 1080p (HD upscale) | 4K native |
 | Negative Prompts | ❌ Not supported | ✅ Supported |
 | Reference Images | Limited | Up to 3 (Ingredients) |
 | Audio | Native integrated | Supported |

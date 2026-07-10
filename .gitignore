@@ -1,9 +1,4 @@
-# >>> project-bootstrap managed >>>
-.cc-status-bar.voice.json
-# <<< project-bootstrap managed <<<
-
 docs/
-CLAUDE.md
 
 # macOS
 .DS_Store
@@ -31,3 +26,10 @@ CLAUDE.md
 .env.*
 *.pem
 *.key
+
+# >>> project-bootstrap local-only >>>
+CLAUDE.local.md
+.codex/config.toml
+.local/
+.cc-status-bar.voice.json
+# <<< project-bootstrap local-only <<<
